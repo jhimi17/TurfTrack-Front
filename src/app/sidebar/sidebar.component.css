@@ -7,7 +7,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: 24px;
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos ---*/
   }
   
   .bar {
