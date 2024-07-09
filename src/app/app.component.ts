@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { CanchaListComponent } from './cancha-list/cancha-list.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  standalone: true,
+  imports: [SidebarComponent, CanchaListComponent]
 })
 export class AppComponent {
-  title = 'canchaSint';
+  title = 'TuAplicacion';
 }

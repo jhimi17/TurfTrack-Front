@@ -1,0 +1,77 @@
+.menu-toggle {
+    position: fixed; /* Siempre visible */
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  }
+  
+  .bar {
+    width: 30px;
+    height: 3px;
+    background-color: rgb(25, 24, 24);
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar {
+    background-color: rgb(74, 168, 111);
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    transform: translateX(-200px); /* Inicialmente oculto */
+    transition: transform 0.3s ease;
+    z-index: 999; /* Asegura que esté debajo del botón sándwich */
+  }
+  
+  .sidebar.active {
+    transform: translateX(0); /* Mostrar menú */
+  }
+  
+  .profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .profile-pic {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .menu {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .menu li {
+    margin: 20px 0;
+  }
+  
+  .menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .menu a:hover {
+    background-color: #006400;
+  }
+  

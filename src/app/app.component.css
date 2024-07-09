@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+  }
+  
+  .content {
+    margin-left: 200px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .sidebar.active ~ .content {
+    margin-left: 200px;
+  }
+  
+  .sidebar:not(.active) ~ .content {
+    margin-left: 0;
+  }
+  

@@ -1,0 +1,18 @@
+<div class="menu-toggle" (click)="toggleMenu()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+  <div class="sidebar" [class.active]="isMenuOpen">
+    <div class="profile-section">
+      <img src="assets/placeholder.png" alt="Profile Picture" class="profile-pic">
+      <p>Perfil</p>
+    </div>
+    <ul class="menu">
+      <li><a href="#">Listado de Canchas</a></li>
+      <li><a href="#">Mi Historial</a></li>
+      <li><a href="#">Configuración</a></li>
+      <li><a href="#">Cerrar Sesión</a></li>
+    </ul>
+  </div>
+  
