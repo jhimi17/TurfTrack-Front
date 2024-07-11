@@ -3,16 +3,16 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css'],
-  standalone: true
+  standalone: true,
 })
 export class SidebarComponent {
-  isMenuOpen = false;
-
   toggleMenu() {
-    console.log("Menu toggled");
-    console.log("isMenuOpen before toggle:", this.isMenuOpen);
-    this.isMenuOpen = !this.isMenuOpen;
-    console.log("isMenuOpen after toggle:", this.isMenuOpen);
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar) {
+      sidebar.classList.toggle('translate-x-0');
+      console.log('Menu toggled');
+    } else {
+      console.error('Sidebar element not found');
+    }
   }
 }

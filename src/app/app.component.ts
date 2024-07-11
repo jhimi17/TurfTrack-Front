@@ -10,5 +10,5 @@ import { CanchaListComponent } from './cancha-list/cancha-list.component';
   imports: [RouterOutlet, SidebarComponent, CanchaListComponent]
 })
 export class AppComponent {
-  title = 'TuAplicacion';
+  title = 'canchaSint';
 }

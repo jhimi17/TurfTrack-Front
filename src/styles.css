@@ -1,116 +1,53 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body, html {
-    height: 100%;
-    width: 100%;
-  }
-  
-  .header {
-    background-color: rgb(30, 125, 68); /* Color actualizado */
-    color: white;
-    text-align: center;
-    padding: 10px; /* Ajuste para hacer el header más delgado */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    font-size: 24px;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .container {
-    display: flex;
-    margin-top: 60px; /* Ajuste para la nueva altura del header */
-  }
-  
-  .content {
-    margin-left: 200px;
-    padding: 20px;
-    flex-grow: 1;
-    overflow-y: auto;
-    height: calc(100vh - 60px); /* Altura del contenido ajustada */
-  }
-  
-  .menu-toggle {
-    position: fixed; /* Siempre visible */
-    top: 10px;
-    left: 10px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 24px;
-    z-index: 1001; /* Asegura que esté por encima del header */
-  }
-  
-  .bar {
-    width: 30px;
-    height: 3px;
-    background-color: white;
-    transition: all 0.3s ease;
-  }
-  
-  .sidebar {
-    background-color: green;
-    width: 200px;
-    height: calc(100% - 60px); /* Ajustado para estar debajo del header */
-    position: fixed;
-    top: 60px; /* Ajustado para estar debajo del header */
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-    transform: translateX(-200px); /* Inicialmente oculto */
-    transition: transform 0.3s ease;
-    z-index: 1000; /* Asegura que esté por encima de otros contenidos pero debajo del menu-toggle */
-  }
-  
-  .sidebar.active {
-    transform: translateX(0); /* Mostrar menú */
-    z-index: 1001; /* Asegura que esté por encima de otros elementos cuando está activo */
-  }
-  
-  .profile-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-  }
-  
-  .profile-pic {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-  }
-  
-  .menu {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 20px;
-    width: 100%;
-  }
-  
-  .menu li {
-    margin: 20px 0;
-  }
-  
-  .menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    width: 100%;
-    display: block;
-    text-align: center;
-    padding: 10px 0;
-  }
-  
-  .menu a:hover {
-    background-color: #006400;
-  }
-  
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos adicionales globales */
+body, html {
+  font-size: 1.2rem;
+  height: 100%;
+  width: 100%;
+}
+
+.menu-toggle {
+  position: fixed;
+  z-index: 50; /* Asegura que esté por encima del header */
+  top: 2rem; /* Ajusta la distancia desde la parte superior */
+  left: 2rem; /* Ajusta la distancia desde la parte izquierda */
+}
+
+.sidebar {
+  z-index: 40; /* Asegura que esté por encima de otros contenidos pero debajo del menu-toggle */
+  transform: translateX(-100%); /* Inicialmente oculto */
+  transition: transform 0.3s ease; /* Añade una transición suave */
+}
+
+.sidebar.translate-x-0 {
+  transform: translateX(0); /* Mostrar menú */
+}
+
+.profile-section {
+  margin-top: 4rem; /* Ajusta el espacio superior del perfil */
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu li {
+  margin: 1.25rem 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 1.125rem;
+}
+
+.menu a:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Efecto hover */
+}

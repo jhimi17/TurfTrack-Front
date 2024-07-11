@@ -1,12 +1,13 @@
-<!-- cancha-list.component.html -->
-<div class="cancha-list">
-    <h1>Reserva tu Cancha!</h1>
-    <div class="cancha" *ngFor="let cancha of canchas">
-      <img src="{{cancha.foto}}" alt="Foto de la cancha">
+<div class="grid grid-cols-3 gap-4 p-4">
+  <div *ngFor="let cancha of canchas" class="border rounded-lg shadow-lg bg-white">
+    <img [src]="cancha.imagen" alt="Foto de la cancha" class="w-full h-32 object-cover">
+    <div class="p-2">
       <p>Foro: {{cancha.foro}}</p>
       <p>Costo: S/. {{cancha.costo}}/h</p>
-      <p>Estado: <span [class.available]="cancha.estado === 'Disponible'" [class.occupied]="cancha.estado === 'Ocupado'">{{cancha.estado}}</span></p>
-      <button (click)="verMas(cancha)">Ver más</button>
+      <p [ngClass]="{'text-green-500': cancha.estado === 'Disponible', 'text-red-500': cancha.estado === 'Ocupado'}">
+        Estado: {{cancha.estado}}
+      </p>
+      <button class="mt-2 w-full bg-green-500 text-white py-1 rounded">Ver más</button>
     </div>
   </div>
-  
+</div>
