@@ -1,0 +1,21 @@
+version: '3.8'
+networks:
+  colors-frontend:
+    name: colors-frontend
+
+services:
+  frontTruf:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: truftrack/angular:1.0
+    container_name: frontend
+    command: bash -c "npm install && ng serve --host 0.0.0.0 --port 80 --poll 1000"
+    working_dir: /app 
+    restart: on-failure
+    volumes:
+    - .:/app:rw
+    ports:
+      - 80:80
+    networks:
+      - colors-frontend
