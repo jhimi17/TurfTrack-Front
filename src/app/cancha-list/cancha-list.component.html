@@ -7,7 +7,7 @@
       <p [ngClass]="{'text-green-500': cancha.estado === 'Disponible', 'text-red-500': cancha.estado === 'Ocupado'}">
         Estado: {{cancha.estado}}
       </p>
-      <button class="mt-2 w-full bg-green-500 text-white py-1 rounded">Ver más</button>
+      <button (click)="verDetalles(cancha.foro)" class="mt-2 w-full bg-green-500 text-white py-1 rounded">Ver más</button>
     </div>
   </div>
 </div>

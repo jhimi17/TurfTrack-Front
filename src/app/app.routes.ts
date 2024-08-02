@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 import { CanchaListComponent } from './cancha-list/cancha-list.component';
-// Importa otros componentes si es necesario
+import { CanchaDetailsComponent } from './cancha-details/cancha-details.component';
 
 export const routes: Routes = [
   { path: '', component: CanchaListComponent },
-  // Agrega aquí otras rutas según tus necesidades
+  { path: 'cancha-details/:id', component: CanchaDetailsComponent }
 ];

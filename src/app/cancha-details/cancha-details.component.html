@@ -1,0 +1,34 @@
+<div class="p-4">
+    <h1 class="text-2xl font-bold mb-4">Reservar Cancha</h1>
+    <div class="overflow-x-auto">
+      <table class="table-auto w-full border-collapse">
+        <thead>
+          <tr>
+            <th class="border p-2">Hora</th>
+            <th *ngFor="let dia of diasDeLaSemana" [ngClass]="{'bg-green-500 text-white': esHoy(dia.fecha)}" class="border p-2">
+              {{ dia.nombre }} {{ dia.fecha.getDate() }}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let hora of horas">
+            <td class="border p-2">{{ hora }}</td>
+            <td *ngFor="let dia of diasDeLaSemana" class="border p-2 cursor-pointer"
+                [ngClass]="{'text-green-500': dia.estado[hora] === 'Disponible', 'text-red-500': dia.estado[hora] === 'Ocupado', 'bg-yellow-200': estaSeleccionado(dia.nombre, hora)}"
+                (click)="dia.estado[hora] === 'Disponible' && seleccionarCelda(dia.nombre, hora)">
+                {{ dia.estado[hora] }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button (click)="confirmarReserva()" class="mt-4 bg-green-500 text-white py-2 px-4 rounded">Confirmar Reserva</button>
+  
+    <!-- Modal -->
+    <app-reserva-modal *ngIf="mostrarModal"
+                       [horasSeleccionadas]="horasSeleccionadas"
+                       [montoAPagar]="montoAPagar"
+                       (close)="cerrarModal()">
+    </app-reserva-modal>
+  </div>
+  
