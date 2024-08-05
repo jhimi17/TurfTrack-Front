@@ -14,9 +14,9 @@ export class ReservaModalComponent {
   @Output() close = new EventEmitter<void>();
 
   nick: string = '';
-  nombreSolicitante: string = 'Jorge Gutierrez';
+  nombreSolicitante: string = 'Jhimi Marcelo';
   numeroCelular: string = '';
-  dni: string = '75846925';
+  dni: string = '74951120';
 
   cancelar() {
     this.close.emit();
