@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   standalone: true,
+  imports: [CommonModule, RouterModule]
 })
 export class SidebarComponent {
+  menuVisible = false;
+
   toggleMenu() {
-    const sidebar = document.querySelector('.sidebar');
-    if (sidebar) {
-      sidebar.classList.toggle('translate-x-0');
-      console.log('Menu toggled');
-    } else {
-      console.error('Sidebar element not found');
-    }
+    this.menuVisible = !this.menuVisible;
+    console.log('Toggle Menu clicked', this.menuVisible);
   }
 }

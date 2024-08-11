@@ -1,8 +1,11 @@
 import { Routes } from '@angular/router';
 import { CanchaListComponent } from './cancha-list/cancha-list.component';
-// Importa otros componentes si es necesario
+import { CanchaDetailsComponent } from './cancha-details/cancha-details.component';
+import { HistorialComponent } from './historial/historial.component';
 
 export const routes: Routes = [
-  { path: '', component: CanchaListComponent },
-  // Agrega aquí otras rutas según tus necesidades
+  { path: '', redirectTo: '/canchas', pathMatch: 'full' },
+  { path: 'canchas', component: CanchaListComponent },
+  { path: 'canchas/:id', component: CanchaDetailsComponent },
+  { path: 'historial', component: HistorialComponent },
 ];
