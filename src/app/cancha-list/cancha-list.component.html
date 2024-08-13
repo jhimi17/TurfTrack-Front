@@ -1,13 +1,17 @@
-<div class="grid grid-cols-3 gap-4 p-4">
-  <div *ngFor="let cancha of canchas" class="border rounded-lg shadow-lg bg-white">
-    <img [src]="cancha.imagen" alt="Foto de la cancha" class="w-full h-32 object-cover">
-    <div class="p-2">
-      <p>Foro: {{cancha.foro}}</p>
-      <p>Costo: S/. {{cancha.costo}}/h</p>
-      <p [ngClass]="{'text-green-500': cancha.estado === 'Disponible', 'text-red-500': cancha.estado === 'Ocupado'}">
-        Estado: {{cancha.estado}}
-      </p>
-      <a class="mt-2 w-full bg-green-500 text-white py-1 rounded block text-center" [routerLink]="['/canchas', cancha.id]">Ver más</a>
+<app-header></app-header>
+<div class="ml-52 p-5 flex-grow overflow-y-auto h-[calc(100vh-4rem)]">
+  <div class="grid grid-cols-3 gap-4 p-4">
+    <div *ngFor="let cancha of canchas" class="border rounded-lg shadow-lg bg-white">
+      <img [src]="cancha.imagen" alt="Foto de la cancha" class="w-full h-32 object-cover">
+      <div class="p-2">
+        <p>Foro: {{cancha.foro}}</p>
+        <p>Costo: S/. {{cancha.costo}}/h</p>
+        <p [ngClass]="{'text-green-500': cancha.estado === 'Disponible', 'text-red-500': cancha.estado === 'Ocupado'}">
+          Estado: {{cancha.estado}}
+        </p>
+        <a class="mt-2 w-full bg-green-500 text-white py-1 rounded block text-center" [routerLink]="['/canchas', cancha.id]">Ver más</a>
+      </div>
     </div>
   </div>
 </div>
+

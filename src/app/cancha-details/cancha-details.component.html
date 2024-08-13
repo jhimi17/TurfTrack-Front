@@ -1,4 +1,6 @@
-<div class="p-4">
+<app-header></app-header>
+<div class="ml-52 p-5 flex-grow overflow-y-auto h-[calc(100vh-4rem)]">
+  <div class="p-4">
     <h1 class="text-2xl font-bold mb-4">Reservar Cancha</h1>
     <div class="overflow-x-auto">
       <table class="table-auto w-full border-collapse">
@@ -26,9 +28,9 @@
   
     <!-- Modal -->
     <app-reserva-modal *ngIf="mostrarModal"
-                       [horasSeleccionadas]="horasSeleccionadas"
-                       [montoAPagar]="montoAPagar"
-                       (close)="cerrarModal()">
+                        [horasSeleccionadas]="horasSeleccionadas"
+                        [montoAPagar]="montoAPagar"
+                        (close)="cerrarModal()">
     </app-reserva-modal>
-  </div>
-  
+  </div>  
+</div>

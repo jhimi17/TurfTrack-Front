@@ -3,12 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReservaModalComponent } from '../reserva-modal/reserva-modal.component';
-
+import { HeaderComponent } from '../header/header.component';
 @Component({
   selector: 'app-cancha-details',
   templateUrl: './cancha-details.component.html',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReservaModalComponent]
+  imports: [CommonModule, FormsModule, ReservaModalComponent, HeaderComponent]
 })
 export class CanchaDetailsComponent implements OnInit {
   canchaId: number = 0;
